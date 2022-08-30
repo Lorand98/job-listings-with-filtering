@@ -1,11 +1,13 @@
-import { AppBar } from "@mui/material";
-import { ReactComponent as BigHeaderDesktop } from "../../assets/bg-header-desktop.svg";
+import { AppBar } from '@mui/material';
+import bigHeaderDesktopBg from '../../assets/bg-header-desktop.svg';
 
 function Header() {
   return (
-    <AppBar position="relative">
-      <BigHeaderDesktop />
-    </AppBar>
+    <AppBar
+      position='relative'
+      elevation={0}
+      sx={{ backgroundImage: `url(${bigHeaderDesktopBg})`, height: 125 }}
+    />
   );
 }
 
