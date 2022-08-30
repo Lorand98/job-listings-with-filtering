@@ -16,7 +16,7 @@ export default createTheme({
   },
   typography: {
     fontSize: 15,
-    fontFamily: ["League Spartan", "sans-serif"],
+    fontFamily: ["League Spartan", "sans-serif"].join(","),
   },
   breakpoints: {
     values: {
