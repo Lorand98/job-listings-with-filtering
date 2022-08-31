@@ -1,8 +1,12 @@
-import { PaletteColorOptions } from '@mui/material';
+import { SimplePaletteColorOptions } from '@mui/material';
 
 declare module '@mui/material/styles/createPalette' {
   interface PaletteOptions {
-    neutral?: PaletteColorOptions;
+    neutral?: SimplePaletteColorOptions;
+  }
+
+  interface Palette {
+    neutral?: SimplePaletteColorOptions;
   }
 }
 
