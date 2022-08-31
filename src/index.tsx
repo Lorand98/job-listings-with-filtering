@@ -2,6 +2,7 @@ import { ThemeProvider } from '@mui/material';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import JobContextProvider from './context/job-context';
 import './index.css';
 import theme from './theme';
 
@@ -12,7 +13,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <App />
+      <JobContextProvider>
+        <App />
+      </JobContextProvider>
     </ThemeProvider>
   </React.StrictMode>
 );

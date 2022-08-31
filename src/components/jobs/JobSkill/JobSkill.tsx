@@ -1,4 +1,4 @@
-import {  Typography, useTheme } from '@mui/material';
+import { Typography, useTheme } from '@mui/material';
 import { ReactNode } from 'react';
 
 function JobSkill({ children }: { children: ReactNode }) {
@@ -13,6 +13,7 @@ function JobSkill({ children }: { children: ReactNode }) {
         p: '0.5rem',
         color: theme.palette.primary.main,
         borderRadius: '0.3rem',
+        fontWeight: '600',
       }}
     >
       {children}

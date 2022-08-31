@@ -1,12 +1,12 @@
 import { Box, Grid, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { ReactComponent as MyHome } from '../../../assets/myhome.svg';
 import { darkNeutralColor, mainNeutralColor } from '../../../theme';
+import { IJobs } from '../../../types';
 import Card from '../../ui/Card';
 import Tag from '../../ui/Tag';
 import JobSkill from '../JobSkill';
 
-const Job = () => {
+const Job = ({ job }: { job: IJobs }) => {
   const theme = useTheme();
 
   return (
@@ -18,9 +18,7 @@ const Job = () => {
             display: 'flex',
             alignItems: 'center',
           }}
-        >
-          <MyHome />
-        </Grid>
+        ></Grid>
         <Grid
           item
           desktop={5}
@@ -37,12 +35,14 @@ const Job = () => {
               component='h2'
               sx={{ fontWeight: '600', color: theme.palette.primary.main }}
             >
-              Photosnap
+              {job.company}
             </Typography>
-            <Tag bgColor={theme.palette.primary.main}>new!</Tag>
-            <Tag bgColor={theme.palette.neutral?.dark || darkNeutralColor}>
-              featured
-            </Tag>
+            {job.new && <Tag bgColor={theme.palette.primary.main}>new!</Tag>}
+            {job.featured && (
+              <Tag bgColor={theme.palette.neutral?.dark || darkNeutralColor}>
+                featured
+              </Tag>
+            )}
           </Box>
           <Box>
             <Typography
@@ -56,11 +56,19 @@ const Job = () => {
                 },
               }}
             >
-              Senior Frontend Developer
+              {job.position}
             </Typography>
           </Box>
-          <Box sx={{ color: theme.palette.neutral?.main || mainNeutralColor }}>
-            <Typography variant='body2'> 5d ago</Typography>
+          <Box
+            sx={{
+              color: theme.palette.neutral?.main || mainNeutralColor,
+              display: 'flex',
+              gap: '1rem',
+            }}
+          >
+            <Typography variant='body2'>{job.postedAt}</Typography>
+            <Typography variant='body2'>{job.contract}</Typography>
+            <Typography variant='body2'>{job.location}</Typography>
           </Box>
         </Grid>
         <Grid
@@ -70,9 +78,14 @@ const Job = () => {
             display: 'flex',
             justifyContent: 'flex-end',
             alignItems: 'center',
+            gap: '0.8rem',
           }}
         >
-          <JobSkill>Frontend</JobSkill>
+          <JobSkill>{job.role}</JobSkill>
+          <JobSkill>{job.level}</JobSkill>
+          {job.languages.map((language) => (
+            <JobSkill>{language}</JobSkill>
+          ))}
         </Grid>
       </Grid>
     </Card>
