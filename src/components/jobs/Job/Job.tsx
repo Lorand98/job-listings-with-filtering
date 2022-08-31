@@ -1,4 +1,4 @@
-import { Box, Grid, Paper, Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { ReactComponent as MyHome } from '../../../assets/myhome.svg';
 import { darkNeutralColor, mainNeutralColor } from '../../../theme';

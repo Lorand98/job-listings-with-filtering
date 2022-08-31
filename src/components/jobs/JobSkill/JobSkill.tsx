@@ -1,5 +1,5 @@
-import { Card, Typography, useTheme } from '@mui/material';
-import React, { ReactNode } from 'react';
+import {  Typography, useTheme } from '@mui/material';
+import { ReactNode } from 'react';
 
 function JobSkill({ children }: { children: ReactNode }) {
   const theme = useTheme();
