@@ -7,7 +7,6 @@ function JobSkill({ children }: { children: ReactNode }) {
   return (
     <Typography
       variant='body2'
-      component='caption'
       sx={{
         backgroundColor: theme.palette.neutral?.light,
         p: '0.5rem',

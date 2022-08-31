@@ -3,6 +3,7 @@ import { useTheme } from '@mui/material/styles';
 import { darkNeutralColor, mainNeutralColor } from '../../../theme';
 import { IJobs } from '../../../types';
 import Card from '../../ui/Card';
+import SVGIcon from '../../ui/SVGIcon';
 import Tag from '../../ui/Tag';
 import JobSkill from '../JobSkill';
 
@@ -18,7 +19,9 @@ const Job = ({ job }: { job: IJobs }) => {
             display: 'flex',
             alignItems: 'center',
           }}
-        ></Grid>
+        >
+          <SVGIcon name={job.logo} />
+        </Grid>
         <Grid
           item
           desktop={5}
@@ -84,7 +87,7 @@ const Job = ({ job }: { job: IJobs }) => {
           <JobSkill>{job.role}</JobSkill>
           <JobSkill>{job.level}</JobSkill>
           {job.languages.map((language) => (
-            <JobSkill>{language}</JobSkill>
+            <JobSkill key={language}>{language}</JobSkill>
           ))}
         </Grid>
       </Grid>
