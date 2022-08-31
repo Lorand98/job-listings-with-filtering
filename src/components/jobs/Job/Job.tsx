@@ -2,6 +2,7 @@ import { Box, Grid, Paper, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { ReactComponent as MyHome } from '../../../assets/myhome.svg';
 import { darkNeutralColor, mainNeutralColor } from '../../../theme';
+import Card from '../../ui/Card';
 import Tag from '../../ui/Tag';
 import JobSkill from '../JobSkill';
 
@@ -9,12 +10,7 @@ const Job = () => {
   const theme = useTheme();
 
   return (
-    <Paper
-      sx={{
-        p: '1.8rem',
-        boxShadow: '0rem 1rem 2rem -1.2rem hsl(180, 29%, 50%)',
-      }}
-    >
+    <Card>
       <Grid container>
         <Grid
           item
@@ -79,7 +75,7 @@ const Job = () => {
           <JobSkill>Frontend</JobSkill>
         </Grid>
       </Grid>
-    </Paper>
+    </Card>
   );
 };
 
