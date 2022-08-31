@@ -1,22 +1,25 @@
-import { createTheme } from '@mui/material';
+import { createTheme } from "@mui/material";
+
+export const mainColor = "#5ba4a4";
+export const neutralDark = "#2c3a3a";
 
 export default createTheme({
   palette: {
     primary: {
-      main: '#5ba4a4',
+      main: mainColor,
     },
     neutral: {
-      light: '#eef6f6',
-      main: '#7b8e8e',
-      dark: '#2c3a3a',
+      light: "#eef6f6",
+      main: "#7b8e8e",
+      dark: neutralDark,
     },
     background: {
-      default: '#effafa',
+      default: "#effafa",
     },
   },
   typography: {
     fontSize: 15,
-    fontFamily: ['League Spartan', 'sans-serif'].join(','),
+    fontFamily: ["League Spartan", "sans-serif"].join(","),
   },
   breakpoints: {
     values: {
